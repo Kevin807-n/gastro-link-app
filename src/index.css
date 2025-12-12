@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Mejora global para móviles: Inputs y Botones más altos por defecto */
+@media (max-width: 640px) {
+  input, select, button {
+    min-height: 44px; /* Tamaño mínimo recomendado por Apple/Google para dedos */
+  }
+}
+
+/* Ocultar scrollbar fea pero permitir scroll */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
