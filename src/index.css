@@ -1,15 +1,48 @@
+/* 1. IMPORTAR LA FUENTE 'INTER' (Estilo App Moderna) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Mejora global para móviles: Inputs y Botones más altos por defecto */
+/* 2. CONFIGURACIÓN BASE GLOBAL */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Color de fondo base (Slate 950) para evitar flash blanco al recargar */
+  color-scheme: dark;
+  background-color: #020617; 
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Importante: Asegura que la App ocupe toda la pantalla */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* Quitamos el text-align: center que tenías antes */
+}
+
+/* 3. UTILIDADES */
+
+/* Inputs y Botones más altos en móvil para dedos (Touch targets) */
 @media (max-width: 640px) {
   input, select, button {
-    min-height: 44px; /* Tamaño mínimo recomendado por Apple/Google para dedos */
+    min-height: 48px; 
   }
 }
 
-/* Ocultar scrollbar fea pero permitir scroll */
+/* Ocultar barra de scroll (pero permitir scroll) - Estilo limpio */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
